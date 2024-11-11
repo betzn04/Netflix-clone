@@ -1,0 +1,147 @@
+/* General styling for the movie details page */
+.movie-detail {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .movie-banner {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .movie-info {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .movie-info h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .movie-info .release-date,
+  .movie-info .rating {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  .movie-info .overview {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  
+  .movie-poster {
+    margin-top: 20px;
+  }
+  
+  .movie-poster img {
+    width: 250px;
+    border-radius: 8px;
+  }
+  
+  .movie-detail-button {
+    background-color: #e50914;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+  }
+  
+  .movie-detail-button:hover {
+    background-color: #b81d22;
+  }
+  
+  .movie-detail-banner-content {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    right: 20px;
+  }
+  
+  .movie-detail-banner-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .movie-detail-banner-release-date,
+  .movie-detail-banner-rating {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .movie-detail-banner-overview {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    max-width: 900px;
+  }
+  
+  .movie-detail-container {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .movie-detail-container .backdrop-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .movie-detail-container .movie-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .movie-detail-container .movie-meta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .movie-detail-container .movie-meta span {
+    font-weight: 500;
+  }
+  
+  .movie-detail-container .movie-description {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
