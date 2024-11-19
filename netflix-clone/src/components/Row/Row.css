@@ -1,61 +1,7 @@
-/* .row {
-  margin-left: 20px;
-  color: white;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #333;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #b5b5b5;
-  border-radius: 10px;
-  border: 2px solid #333;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #888;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  background-color: #b5b5b5;
-}
-
-.row h2 {
-  margin-left: 20px;
-}
-
-.row-posters {
-  display: flex;
-  overflow-x: scroll;
-  padding: 20px;
-}
-
-.row-poster {
-  object-fit: contain;
-  width: 100%;
-  max-height: 200px;
-  margin-right: 10px;
-  transition: transform 0.3s ease;
-}
-
-.row-poster:hover {
-  transform: scale(1.08);
-} */
-
-/* Container for the whole row */
 .row {
   margin-left: 20px;
   margin-top: 20px;
 }
-
-/* Title of the row (like "Trending Now", "Top Rated", etc.) */
 .row h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -63,8 +9,6 @@
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-
-/* Container for the movie posters */
 .row-posters {
   display: flex;
   flex-wrap: nowrap;
@@ -74,13 +18,12 @@
 }
 
 .row-posters::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar */
+  display: none;
 }
 
-/* Each movie poster item */
 .content {
   position: relative;
-  flex-shrink: 0; /* Prevent the images from shrinking */
+  flex-shrink: 0;
   width: 150px;
   height: 225px;
   border-radius: 10px;
@@ -89,7 +32,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-/* Styling for the row poster image */
 .row-poster {
   width: 100%;
   height: 100%;
@@ -99,10 +41,9 @@
 }
 
 .row-poster:hover {
-  transform: scale(1.08); /* Slight zoom effect when hovering over the poster */
+  transform: scale(1.08);
 }
 
-/* Optional: For responsiveness */
 @media (max-width: 768px) {
   .row-posters {
     gap: 5px;

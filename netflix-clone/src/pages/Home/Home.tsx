@@ -8,6 +8,9 @@ export const Home = () => {
         <>
             <div className='home'>
                 <Navbar />
+                <>
+                
+                </>
             </div>
         </>
     )

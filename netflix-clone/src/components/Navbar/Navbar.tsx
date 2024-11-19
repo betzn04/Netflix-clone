@@ -8,19 +8,14 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
-    // Scroll event listener to check page scroll position
     const handleScroll = () => {
-      if (window.scrollY > 70) {  // When the scroll position is greater than 50px
-        setIsScrolled(true);  // Set navbar to opaque
+      if (window.scrollY > 70) {  
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false);  // Set navbar to transparent
+        setIsScrolled(false);
       }
     };
-
-    // Add event listener for scrolling
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

@@ -1,147 +1,166 @@
-/* General styling for the movie details page */
-.movie-detail {
-    color: white;
-    font-family: 'Arial', sans-serif;
-    background-color: #111;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #141414;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Movie Detail Page */
+.movie-details {
+  background-color: #141414;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Movie Banner (Backdrop Image) */
+.movie-banner {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 30px;
+  border-bottom: 4px solid #222;
+  color: white;
+}
+
+.movie-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Movie Info inside the Banner */
+.movie-info {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  color: white;
+  z-index: 10;
+  max-width: 600px;
+}
+
+.movie-info h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.movie-info .release-date,
+.movie-info .rating {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.movie-info .overview {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.5;
+  margin-top: 10px;
+  max-width: 550px;
+}
+
+/* Movie Poster */
+.movie-poster {
+  position: relative;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.movie-poster img {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Additional Movie Details */
+.movie-details-info {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+.movie-details-info div {
+  margin-bottom: 15px;
+}
+
+.movie-details-info strong {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.movie-details-info .movie-genres,
+.movie-details-info .movie-runtime,
+.movie-details-info .movie-tagline,
+.movie-details-info .movie-language,
+.movie-details-info .movie-budget,
+.movie-details-info .movie-revenue,
+.movie-details-info .movie-production-companies,
+.movie-details-info .movie-status {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #141414;
+}
+
+.loading img {
+  width: 80px;
+}
+
+/* Error Message */
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #141414;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
   .movie-banner {
-    width: 100%;
-    height: 400px;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    height: 300px;
   }
-  
-  .movie-info {
-    background-color: rgba(0, 0, 0, 0.7); /* Darken the background */
-    color: white;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    text-align: center;
-    border-radius: 8px;
-  }
-  
+
   .movie-info h1 {
-    font-size: 3rem;
-    margin: 0;
-    font-weight: bold;
+    font-size: 2rem;
   }
-  
+
   .movie-info .release-date,
   .movie-info .rating {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1rem;
   }
-  
+
   .movie-info .overview {
-    font-size: 1.1rem;
-    margin-top: 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    font-size: 0.9rem;
   }
-  
-  .movie-poster {
-    margin-top: 20px;
-  }
-  
+
   .movie-poster img {
-    width: 250px;
-    border-radius: 8px;
+    max-width: 180px;
   }
-  
-  .movie-detail-button {
-    background-color: #e50914;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    margin-top: 20px;
-    text-transform: uppercase;
-    transition: background-color 0.2s ease;
-  }
-  
-  .movie-detail-button:hover {
-    background-color: #b81d22;
-  }
-  
-  .movie-detail-banner-content {
-    position: absolute;
-    bottom: 40px;
-    left: 20px;
-    right: 20px;
-  }
-  
-  .movie-detail-banner-title {
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  }
-  
-  .movie-detail-banner-release-date,
-  .movie-detail-banner-rating {
-    font-size: 1.2rem;
-    margin-top: 5px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  }
-  
-  .movie-detail-banner-overview {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    line-height: 1.6;
-    max-width: 900px;
-  }
-  
-  .movie-detail-container {
-    max-width: 1200px;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  
-  .movie-detail-container .backdrop-wrapper {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    margin-bottom: 20px;
-  }
-  
-  .movie-detail-container .movie-title {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .movie-detail-container .movie-meta {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 1.2rem;
-  }
-  
-  .movie-detail-container .movie-meta span {
-    font-weight: 500;
-  }
-  
-  .movie-detail-container .movie-description {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+}
