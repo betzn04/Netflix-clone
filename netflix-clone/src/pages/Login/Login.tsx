@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'; // Same CSS file for styling
+import './Login.css';
 import {Link} from 'react-router-dom'
 
 const LoginPage: React.FC = () => {
@@ -10,10 +10,8 @@ const LoginPage: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Call your login API here (for now just log the details)
         console.log('User logged in:', { email, password });
 
-        // Example error check (you can customize this based on actual login failure)
         if (email === '' || password === '') {
             setError('Please fill in both fields.');
         } else {
@@ -48,7 +46,7 @@ const LoginPage: React.FC = () => {
                 </div>
                 <button type="submit" className="auth-button">Login</button>
             </form>
-            <p>
+            <p className='auth-p'>
                 Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
         </div>

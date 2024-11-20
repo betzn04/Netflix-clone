@@ -56,7 +56,7 @@ const SignUpPage: React.FC = () => {
                 </div>
                 <button type="submit" className="auth-button">Sign Up</button>
             </form>
-            <p>
+            <p className='auth-p'>
                 Already have an account? <Link to="/login">Login</Link>
             </p>
         </div>

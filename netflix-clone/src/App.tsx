@@ -7,6 +7,8 @@ import Loading from './assets/images/misc/loading.gif';
 import { fetchTrendingMovies, fetchPopularMovies, fetchTopRatedMovies } from './utils/fetchMovies';
 import { Movie } from './types/movies';
 import { Navbar } from './components/Navbar/Navbar';
+import SignUpPage from './pages/SignUp/SignUp';
+import LoginPage from './pages/Login/Login';
 
 const AppContent: React.FC<{ trendingMovies: Movie[], popularMovies: Movie[], topRatedMovies: Movie[] }> = ({ trendingMovies, popularMovies, topRatedMovies }) => {
 
@@ -23,9 +25,17 @@ const AppContent: React.FC<{ trendingMovies: Movie[], popularMovies: Movie[], to
       ),
     },
     {
+      path: '/signup',
+      element: <SignUpPage />,
+    },
+    {
+      path: '/login',
+      element: <LoginPage />,
+    },
+    {
       path: '/movie/:id',
       element: <MovieDetails />,
-    },
+    }
   ];
 
   return useRoutes(routes);

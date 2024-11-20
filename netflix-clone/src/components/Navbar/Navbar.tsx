@@ -6,10 +6,15 @@ import { useEffect, useState } from 'react';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 70) {  
+      if (window.scrollY > 70) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -24,14 +29,19 @@ export const Navbar = () => {
   return (
     <div className={`nav ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-left">
-        <img src={logo} alt="netflix" />
-        <ul>
-          <li>Home</li>
-          <li>TV Shows</li>
-          <li>Movies</li>
-          <li>New & Popular</li>
-          <li>My List</li>
-          <li>Browse by Languages</li>
+        <div className={`navbar__hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a href='/'><img src={logo} alt="netflix" /></a>
+        <ul className={`navbar__links ${menuOpen ? 'active' : ''}`}>
+          <li><a href='/'>Home</a></li>
+          <li><a href=''>TV Shows</a></li>
+          <li><a href=''>Movies</a></li>
+          <li><a href=''>New & Popular</a></li>
+          <li><a href=''>My List</a></li>
+          <li><a href=''>Browse by Languages</a></li>
         </ul>
       </div>
       <div className="navbar-right">

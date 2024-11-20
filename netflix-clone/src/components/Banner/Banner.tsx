@@ -21,6 +21,7 @@ const Banner: React.FC<BannerProps> = ({ movie }) => {
         backgroundPosition: 'center center',
         height: '430px', 
         color: 'white', 
+        top:'0px',
         padding: '20px ',
         position: 'relative',
       }}
