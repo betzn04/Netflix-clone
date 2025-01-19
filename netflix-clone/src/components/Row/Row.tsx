@@ -9,7 +9,7 @@ interface RowProps {
 }
 
 const Row: React.FC<RowProps> = ({ title, movies }) => {
-  const imageBaseUrl = "https://image.tmdb.org/t/p/w500/";
+  const imageBaseUrl = process.env.REACT_APP_IMAGE_BASE_URL;
   const navigate = useNavigate();
   
   const handleImageClick = (movieId: number) => {

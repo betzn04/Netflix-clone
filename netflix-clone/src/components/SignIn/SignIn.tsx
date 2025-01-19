@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './SignIn.css';
 import {Link} from 'react-router-dom'
 
-const LoginPage: React.FC = () => {
+const SignIn: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState<string>('');
@@ -10,13 +10,19 @@ const LoginPage: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        console.log('User logged in:', { email, password });
+        setError('');
 
-        if (email === '' || password === '') {
-            setError('Please fill in both fields.');
-        } else {
-            setError('');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError('Invalid email format');
+            return;
         }
+
+        if (password.length < 6) {
+            setError('Password must be at least 6 characters long');
+            return;
+        }
+
     };
 
     return (
@@ -47,10 +53,10 @@ const LoginPage: React.FC = () => {
                 <button type="submit" className="auth-button">Login</button>
             </form>
             <p className='auth-p'>
-                Don't have an account? <Link to="/signup">Sign Up</Link>
+                Don't have an account? <Link style={{color:'gray', textDecoration:'none'}} to="/signup">Sign Up</Link>
             </p>
         </div>
     );
 };
 
-export default LoginPage;
+export default SignIn;

@@ -7,8 +7,10 @@ import Loading from './assets/images/misc/loading.gif';
 import { fetchTrendingMovies, fetchPopularMovies, fetchTopRatedMovies } from './utils/fetchMovies';
 import { Movie } from './types/movies';
 import { Navbar } from './components/Navbar/Navbar';
-import SignUpPage from './pages/SignUp/SignUp';
-import LoginPage from './pages/Login/Login';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
+import { Footer } from './components/Footer/footer';
+import { Home } from './pages/Home/Home';
+import { SignInPage } from './pages/SignInPage/SignInPage';
 
 const AppContent: React.FC<{ trendingMovies: Movie[], popularMovies: Movie[], topRatedMovies: Movie[] }> = ({ trendingMovies, popularMovies, topRatedMovies }) => {
 
@@ -25,16 +27,28 @@ const AppContent: React.FC<{ trendingMovies: Movie[], popularMovies: Movie[], to
       ),
     },
     {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/dashboard',
+      element: <App />,
+    },
+    {
       path: '/signup',
       element: <SignUpPage />,
     },
     {
-      path: '/login',
-      element: <LoginPage />,
+      path: '/signIn',
+      element: <SignInPage/>,
     },
     {
       path: '/movie/:id',
       element: <MovieDetails />,
+    },
+    {
+      path: '*',
+      element: <Home />,
     }
   ];
 
@@ -78,16 +92,14 @@ const App: React.FC = () => {
   }
 
   return (
-    <BrowserRouter future={{
-      v7_startTransition: true,
-      v7_relativeSplatPath: true,
-    }}>
+    <BrowserRouter>
       <Navbar/>
       <AppContent
         trendingMovies={trendingMovies}
         popularMovies={popularMovies}
         topRatedMovies={topRatedMovies}
       />
+      <Footer />
     </BrowserRouter>
   );
 };

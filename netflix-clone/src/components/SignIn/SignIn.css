@@ -2,7 +2,7 @@
     max-width: 400px;
     margin: 200px 300px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -10,7 +10,7 @@
   .auth-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
   }
   
   .auth-form {
@@ -20,7 +20,7 @@
   }
   .auth-container .auth-p{
     text-align: center;
-    color:#333;
+    color:#ffffff;
   }
   
   .auth-field {
@@ -30,7 +30,7 @@
   .auth-field label {
     margin-bottom: 5px;
     font-size: 14px;
-    color: #333;
+    color: #ffffff;
   }
   
   .auth-field input {
